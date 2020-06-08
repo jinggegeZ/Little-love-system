@@ -57,7 +57,7 @@
         </el-table-column>
         <el-table-column
             prop="address"
-            label="Status">
+            label="Stustas">
     </el-table-column>
     </el-table>
     </div>

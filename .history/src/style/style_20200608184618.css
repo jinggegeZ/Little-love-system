@@ -84,20 +84,3 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.hn {
-    width: 400px;
-    height: 360px;
-    background: white;
-    
-}
-.el-table .warning-row {
-    background: oldlace;
-  }
-
-  .el-table .success-row {
-    background: #f0f9eb;
-  }
-  .hf1 {
-      margin-top: 15px;
-      width: 600px;
-  }

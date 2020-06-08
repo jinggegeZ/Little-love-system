@@ -30,39 +30,19 @@
         </div>
         </div>
     </div>
-    <div class="h-body"><ve-line :data="chartData"></ve-line></div>
+    <div class="h-body">
+    <ve-line :data="chartData"></ve-line>
+    </div>
     <div class="h-nav">
-        <div class="hn">
+        <div>
             <ve-radar :data="chartData"></ve-radar>
         </div>
-        <div class="hn">
+        <div>
             <ve-ring :data="chartData" :settings="chartSettings"></ve-ring>
         </div>
-        <div class="hn">
+        <div>
             <ve-histogram :data="chartData"></ve-histogram>
         </div>
-    </div>
-    <div class="h-foot">
-    <div class="hf1">
-    <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
-        <el-table-column
-            prop="date"
-            label="order_No"
-            width="180">
-            </el-table-column>
-        <el-table-column
-            prop="name"
-            label="Price"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="address"
-            label="Status">
-    </el-table-column>
-    </el-table>
-    </div>
-    <div></div>
-    <div></div>
     </div>
  </div>
 </template>
@@ -99,8 +79,9 @@ import axios from 'axios'
             { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
             { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
             { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
-            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 }
-
+            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+            { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+            { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
           ]
         },
         chartData: {
@@ -109,8 +90,9 @@ import axios from 'axios'
             { '日期': '1/1', '访问用户': 1393 },
             { '日期': '1/2', '访问用户': 3530 },
             { '日期': '1/3', '访问用户': 2923 },
-            { '日期': '1/4', '访问用户': 1723 }
-            
+            { '日期': '1/4', '访问用户': 1723 },
+            { '日期': '1/5', '访问用户': 3792 },
+            { '日期': '1/6', '访问用户': 4593 }
           ]
         },
          chartData: {
@@ -119,27 +101,11 @@ import axios from 'axios'
             { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
             { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
             { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
-            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 }
+            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+            { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+            { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
           ]
-        },
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }]
-
+        }
      }
    },
    methods: {

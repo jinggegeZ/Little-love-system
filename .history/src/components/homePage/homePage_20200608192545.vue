@@ -43,26 +43,25 @@
         </div>
     </div>
     <div class="h-foot">
-    <div class="hf1">
-    <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
-        <el-table-column
-            prop="date"
-            label="order_No"
-            width="180">
-            </el-table-column>
-        <el-table-column
-            prop="name"
-            label="Price"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="address"
-            label="Status">
+    <el-table
+    :data="tableData"
+    style="width: 100%"
+    :row-class-name="tableRowClassName">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
     </el-table-column>
-    </el-table>
-    </div>
-    <div></div>
-    <div></div>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
     </div>
  </div>
 </template>
@@ -122,24 +121,8 @@ import axios from 'axios'
             { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 }
           ]
         },
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }]
-
+        
+        
      }
    },
    methods: {

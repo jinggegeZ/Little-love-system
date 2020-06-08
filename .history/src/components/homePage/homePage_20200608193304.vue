@@ -47,17 +47,17 @@
     <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
         <el-table-column
             prop="date"
-            label="order_No"
+            label="日期"
             width="180">
             </el-table-column>
         <el-table-column
             prop="name"
-            label="Price"
+            label="姓名"
             width="180">
         </el-table-column>
         <el-table-column
             prop="address"
-            label="Status">
+            label="地址">
     </el-table-column>
     </el-table>
     </div>
