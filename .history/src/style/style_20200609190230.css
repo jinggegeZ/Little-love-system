@@ -23,16 +23,14 @@ body{
     line-height: 200px;
     position: fixed;
     z-index: 9;
-    top: 60px;
+    top: 60;
     left: 0;
-    height: 100%;
   }
   
   .el-main {
     background-color: #E9EEF3;
     color: #333;
-    margin-top: 60px;
-    margin-left: 200px;
+    
   }
   
   body > .el-container {

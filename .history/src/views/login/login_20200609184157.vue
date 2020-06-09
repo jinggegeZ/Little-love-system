@@ -115,7 +115,7 @@
     width: 400px;
     height: 500px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     border: 1px solid #dddddd;
     background: white;

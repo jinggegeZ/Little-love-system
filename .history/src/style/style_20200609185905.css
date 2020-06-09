@@ -5,15 +5,12 @@ html{
 body{
     height: 100%;
 }
-.el-header {
+.el-header, .el-footer {
     background-color: rgb(46,94,133);
     color:white;
     text-align: center;
     line-height: 60px;
-    position: fixed;
-    width: 100%;
-    z-index: 9;
-    top: 0;
+    display: fixed;
   }
   
   .el-aside {
@@ -21,18 +18,12 @@ body{
     color: #333;
     text-align: center;
     line-height: 200px;
-    position: fixed;
-    z-index: 9;
-    top: 60px;
-    left: 0;
-    height: 100%;
   }
   
   .el-main {
     background-color: #E9EEF3;
     color: #333;
-    margin-top: 60px;
-    margin-left: 200px;
+    
   }
   
   body > .el-container {

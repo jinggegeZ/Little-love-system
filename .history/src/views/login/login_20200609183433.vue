@@ -13,7 +13,6 @@
         </el-form-item>
         <el-form-item>
     <el-button type="primary" @click="submitForm">提交</el-button>
-    <el-button type="warning" @click="register">提交</el-button>
     
   </el-form-item>
 </el-form>
@@ -85,10 +84,8 @@
             return false;
           }
         });
+        
       },
-      register(){
-        this.$router.push('/register')
-      }
      
     },
    mounted() {
@@ -107,18 +104,10 @@
 .continar {
     width:100%;
     height: 100%;
+}
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.box {
-    width: 400px;
-    height: 500px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid #dddddd;
-    background: white;
-    box-shadow: 0 1px 2px 0 #ddd;
 }
 </style>

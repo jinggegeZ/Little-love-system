@@ -13,7 +13,7 @@
         </el-form-item>
         <el-form-item>
     <el-button type="primary" @click="submitForm">提交</el-button>
-    <el-button type="warning" @click="register">提交</el-button>
+    <el-button type="primary" @click="register">提交</el-button>
     
   </el-form-item>
 </el-form>
@@ -87,7 +87,7 @@
         });
       },
       register(){
-        this.$router.push('/register')
+        this.$router.push()
       }
      
     },
@@ -115,7 +115,7 @@
     width: 400px;
     height: 500px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     border: 1px solid #dddddd;
     background: white;
