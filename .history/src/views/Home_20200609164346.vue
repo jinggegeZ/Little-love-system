@@ -65,13 +65,12 @@ import Published from '../components/Published/Published'
 <style scoped>
    .order {
      width: 50%;
-
+    
    }
    .powerbox {
-     width: 20%;
-     background: white;
+     width: 25%;
    }
    .progressbar {
-     width: 25%;
+     width: 20%;
    }
 </style>

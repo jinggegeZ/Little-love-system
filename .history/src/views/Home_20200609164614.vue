@@ -69,7 +69,6 @@ import Published from '../components/Published/Published'
    }
    .powerbox {
      width: 20%;
-     background: white;
    }
    .progressbar {
      width: 25%;

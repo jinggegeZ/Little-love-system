@@ -22,7 +22,7 @@ body{
   .el-main {
     background-color: #E9EEF3;
     color: #333;
-    
+    text-align: center;
   }
   
   body > .el-container {
@@ -111,15 +111,8 @@ body{
     width: 100%;
     margin-bottom: 20px;
 }
-
-.elitem {
-  width: 30px;
-  height: 20px;
-  
-}
-.hb1 {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  
+.h-body {
+    width: 55%;
+    margin-top: 10px;
+    margin-left: 3px;
 }

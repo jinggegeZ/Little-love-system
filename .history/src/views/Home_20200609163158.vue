@@ -6,10 +6,10 @@
    <homePage2></homePage2>
    <homepage3></homepage3>
    </div>
-  <div class="hb1">
-   <div class="order"><order></order></div>
-   <div class="powerbox"><powerbox></powerbox></div>
-   <div class="progressbar"><progressbar></progressbar></div>
+  <div class="h-body">
+   <order></order>
+   <powerbox></powerbox>
+   <progressbar></progressbar>
   </div>
    
    <Published></Published>
@@ -63,15 +63,5 @@ import Published from '../components/Published/Published'
 </script>
 
 <style scoped>
-   .order {
-     width: 50%;
-
-   }
-   .powerbox {
-     width: 20%;
-     background: white;
-   }
-   .progressbar {
-     width: 25%;
-   }
+   
 </style>

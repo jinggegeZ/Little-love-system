@@ -17,7 +17,7 @@
     <el-table-column prop="status" label="Stauts">
     <template>
       <div class="pending" v-if="status === 0">pengding</div>
-      <div class="success" v-else>success</div>
+      <div class="success" v-if="status === 1">success</div>
     </template>
     </el-table-column>
   </el-table>

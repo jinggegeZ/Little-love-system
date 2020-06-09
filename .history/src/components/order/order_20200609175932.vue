@@ -16,8 +16,8 @@
     </el-table-column>
     <el-table-column prop="status" label="Stauts">
     <template>
-      <div class="pending" v-if="status === 0">pengding</div>
-      <div class="success" v-else>success</div>
+      <div class="pending" v-if="status === 0"></div>
+      <div class="success" v-else></div>
     </template>
     </el-table-column>
   </el-table>
@@ -71,26 +71,5 @@ import axios from 'axios'
 </script>
 
 <style scoped>
-.pending {
-  width: 80px;
-  height: 20px;
-  border: 1px solid pink;
-  color: red;
-  border-radius: 5px;
-  background: pink;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.success {
-  width: 80px;
-  height: 20px;
-  border: 1px solid rgb(15, 240, 15);
-  color: rgb(59, 212, 20);
-  border-radius: 5px;
-  background: rgb(224, 216, 217);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 </style>

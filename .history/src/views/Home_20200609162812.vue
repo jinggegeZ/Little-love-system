@@ -6,10 +6,10 @@
    <homePage2></homePage2>
    <homepage3></homepage3>
    </div>
-  <div class="hb1">
-   <div class="order"><order></order></div>
-   <div class="powerbox"><powerbox></powerbox></div>
-   <div class="progressbar"><progressbar></progressbar></div>
+  <div class="h-nav">
+   <order></order>
+   <powerbox></powerbox>
+   <progressbar></progressbar>
   </div>
    
    <Published></Published>
@@ -25,7 +25,7 @@ import homePage2 from '../components/homePage2/homePage2'
 import homepage3 from '../components/homepage3/homepage3'
 import order from '../components/order/order'
 import powerbox from '../components/powerbox/powerbox'
-import progressbar from '../components/progressbar/progressbar'
+import rogressbar from '../components/rogressbar/rogressbar'
 import Published from '../components/Published/Published'
 
  export default {
@@ -40,7 +40,7 @@ import Published from '../components/Published/Published'
      homepage3,
      order,
      powerbox,
-     progressbar,
+     progresssbar,
    },
    data () {
      return {
@@ -63,15 +63,5 @@ import Published from '../components/Published/Published'
 </script>
 
 <style scoped>
-   .order {
-     width: 50%;
-
-   }
-   .powerbox {
-     width: 20%;
-     background: white;
-   }
-   .progressbar {
-     width: 25%;
-   }
+   
 </style>
