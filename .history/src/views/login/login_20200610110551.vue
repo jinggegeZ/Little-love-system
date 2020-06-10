@@ -12,7 +12,7 @@
         <el-input type="password" v-model="ruleForm.code" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <div v-html="code" @click="getCode"></div>
+          <div v-html="code" @click="getcode"></div>
         </el-form-item>
         <el-form-item>
     <el-button type="primary" @click="submitForm">登录</el-button>
@@ -92,17 +92,16 @@ import axios from 'axios'
             })
             .then(res => {
               if (res.data.code === 200) {
-                sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
                 this.$message.success("登录成功");
-                this.$router.push('/');
+                this.$router.push("/");
               } else {
                 this.$message.error(res.data.message);
                 // username: "";
                 // password: "";
               }
-               
+               sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
             })
-            .catch(err => {
+            .cath(err => {
               console.log(err);
             });
         } else {

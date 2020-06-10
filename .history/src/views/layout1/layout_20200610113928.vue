@@ -26,7 +26,7 @@
         <i class="el-icon-menu"></i>
         <span slot="title">已发布</span>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">统计</span>
       </el-menu-item>
@@ -44,7 +44,7 @@
       </el-menu-item>
       <el-menu-item index="7">
         <i class="el-icon-setting"></i>
-        <span slot="title" @click="upload">图片上传</span>
+        <span slot="title">图片上传l</span>
       </el-menu-item>
       <el-menu-item index="8">
         <i class="el-icon-setting"></i>
@@ -84,20 +84,7 @@ import dayjs from 'dayjs'
 
    },
    mounted() {
-     this.obj = JSON.parse(sessionStorage.getItem("user"));
-    this.time = dayjs().format("YYYY年MM月DD日HH时mm分ss秒");
-    let hour = dayjs().format('HH')
-    if(hour >= 6 && hour < 12) {
-      this.hour = "早上好，亲爱的"
-    }else if (hour >= 12 && hour < 14) {
-      this.hour = "中午好，亲爱的"
-    }else if (hour >= 14 && hour < 18) {
-      this.hour = "下午好，亲爱的"
-    }else if (hour >= 18 && hour < 24) {
-      this.hour = "晚上好，亲爱的"
-    }else {
-      this.hour = "该睡觉了，亲爱的"
-    }
+
    },
    watch: {
 

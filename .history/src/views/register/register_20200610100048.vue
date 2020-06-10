@@ -7,13 +7,13 @@
           <el-form-item label="请输入用户名" prop="username">
           <el-input type="text" v-model="ruleForm.username" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="请输入密码" prop="password">
-          <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+          <el-form-item label="请输入密码" prop="passWord">
+          <el-input type="password" v-model="ruleForm.passWord" autocomplete="off"></el-input>
           </el-form-item>
         </div>
         <el-form-item>
         <div style="display:flex">
-        <el-button type="primary" @click="regForm" class="reg">立即注册</el-button>
+        <el-button type="primary" @click="regForm('ruleForm')" class="reg">立即注册</el-button>
         <el-button type="primary" @click="submitForm('ruleForm')" class="submit">立即登录</el-button>
         </div>
         </el-form-item>
@@ -34,7 +34,7 @@ import axios from 'axios'
    data() {
       return {
         ruleForm: {
-          password: '',
+          checkPass: '',
           username: ''
         },
         rules: {
@@ -74,17 +74,22 @@ import axios from 'axios'
       regForm() {
       axios
         .post("/api/user/register", {
-          username: this.ruleForm.username,
-          password: this.ruleForm.password
+          username: this.ruleForm.userName,
+          password: this.ruleForm.passWord
         })
         .then(res => {
           console.log(res.data);
           if (res.data.code === 200) {
-            this.$message.success('注册成功')
-             
+            this.$message({
+              message: res.data.message,
+              type: "success"
+            });
             this.$router.push("/login");
           } else {
-            this.$message.error(res.data.message)
+            this.$message({
+              message: res.data.message,
+              type: "error"
+            });
           }
         })
         .catch(err => {
@@ -144,6 +149,11 @@ a {
 .reg {
   margin-right: 60px;
 }
-
+.el-form-item__label !important{
+  width: 120px;
+}
+.el-form-item__content {
+  margin-left: 140px;
+}
 
 </style>

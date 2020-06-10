@@ -12,7 +12,7 @@
         <el-input type="password" v-model="ruleForm.code" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <div v-html="code" @click="getCode"></div>
+          <div v-html="code" @click="getcode"></div>
         </el-form-item>
         <el-form-item>
     <el-button type="primary" @click="submitForm">登录</el-button>
@@ -78,50 +78,29 @@ import axios from 'axios'
       };
     },
    methods: {
-      register(){
-        this.$router.push("/Register")
-      },
       submitForm() {
-      this.$refs.ruleForm.validate(valid => {
-        if (valid) {
-          axios
-            .post(`/api/user/login`, {
+        this.$refs.ruleForm.validate((valid) => {
+          if (valid) {
+            axios.post('/api/user/login',{
               username: this.ruleForm.username,
               password: this.ruleForm.password,
               code: this.ruleForm.code
             })
-            .then(res => {
-              if (res.data.code === 200) {
-                sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
-                this.$message.success("登录成功");
-                this.$router.push('/');
-              } else {
-                this.$message.error(res.data.message);
-                // username: "";
-                // password: "";
-              }
-               
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        } else {
-          this.$message.error("填写有误,请检查");
-          return false;
-        }
-      });
-    },
-    getCode(){
-      axios.get('/api/captcha').then(res => {
-        this.code = res.data
-      }).catch(err => {
-        console.log(err);
-      })
-    }
+            this.$message.success('登录成功')
+             this.$router.push('/')
+          } else {
+            this.$message.error('用户名或者密码错误')
+            return false;
+          }
+        });
+      },
+      register(){
+        this.$router.push("/Register")
+      }
      
     },
    mounted() {
-     this.getCode()
+
    },
    watch: {
 

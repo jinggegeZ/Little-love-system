@@ -44,7 +44,7 @@
       </el-menu-item>
       <el-menu-item index="7">
         <i class="el-icon-setting"></i>
-        <span slot="title" @click="upload">图片上传</span>
+        <span slot="title" @click="">图片上传</span>
       </el-menu-item>
       <el-menu-item index="8">
         <i class="el-icon-setting"></i>

@@ -26,7 +26,7 @@
         <i class="el-icon-menu"></i>
         <span slot="title">已发布</span>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">统计</span>
       </el-menu-item>
@@ -44,7 +44,7 @@
       </el-menu-item>
       <el-menu-item index="7">
         <i class="el-icon-setting"></i>
-        <span slot="title" @click="upload">图片上传</span>
+        <span slot="title">图片上传l</span>
       </el-menu-item>
       <el-menu-item index="8">
         <i class="el-icon-setting"></i>

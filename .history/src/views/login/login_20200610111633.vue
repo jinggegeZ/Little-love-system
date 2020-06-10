@@ -92,7 +92,6 @@ import axios from 'axios'
             })
             .then(res => {
               if (res.data.code === 200) {
-                sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
                 this.$message.success("登录成功");
                 this.$router.push('/');
               } else {
@@ -100,7 +99,7 @@ import axios from 'axios'
                 // username: "";
                 // password: "";
               }
-               
+               sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
             })
             .catch(err => {
               console.log(err);

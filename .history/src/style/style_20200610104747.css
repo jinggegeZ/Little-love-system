@@ -139,3 +139,6 @@ body{
 .el-form-item__content {
   margin-left: 140px !important;
 }
+.el-input__inner {
+  width: 100px !important;
+}

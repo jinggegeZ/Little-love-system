@@ -19,9 +19,6 @@ Vue.use(VueRouter)
           title:'首页'
         }
       },
-      {
-        path:'',
-      }
     ]
   },
   {

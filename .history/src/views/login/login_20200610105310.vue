@@ -12,9 +12,6 @@
         <el-input type="password" v-model="ruleForm.code" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <div v-html="code" @click="getCode"></div>
-        </el-form-item>
-        <el-form-item>
     <el-button type="primary" @click="submitForm">登录</el-button>
     <el-button type="warning" @click="register">注册</el-button>
     
@@ -27,15 +24,39 @@
 <script>
 import axios from 'axios'
  export default {
-   name: 'login',
+   name: '',
    props: {
    },
    components: {
 
    },
    data() {
+      let checkUsername = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('姓名不能为空'));
+        }
+        callback();
+      };
+      let validatePasswrod = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        } else {
+          if (this.ruleForm.checkPass !== '') {
+            this.$refs.ruleForm.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+      let validatePass2 = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请再次输入密码'));
+        } else if (value !== this.ruleForm.pass) {
+          callback(new Error('两次输入密码不一致!'));
+        } else {
+          callback();
+        }
+      };
       return {
-        code:"",
         ruleForm: {
           password: '',
           code: '',
@@ -43,85 +64,41 @@ import axios from 'axios'
         },
         rules: {
           password: [
-            {
-            required: true,
-            message: "密码不能为空",
-            trigger: "blur"
-          },
-          {
-            min: 6,
-            max: 15,
-            message: "密码在6-15位之间",
-            trigger: "blur"
-          }
+            { validator: validatePass, trigger: 'blur' }
           ],
           code: [
-            {
-            required: true,
-            message: "验证码不能为空",
-            trigger: "blur"
-          }
+            { validator: validatePass2, trigger: 'blur' }
           ],
           username: [
-            { required: true,
-              message:'用户名不能为空',
-              trigger:'blur'
-            },
-            {
-            min: 2,
-            max: 10,
-            message: "用户名在2-10位之间",
-            trigger: "blur"
-          }
+            { validator: checkUsername, trigger: 'blur' }
           ]
         }
       };
     },
    methods: {
-      register(){
-        this.$router.push("/Register")
-      },
       submitForm() {
-      this.$refs.ruleForm.validate(valid => {
-        if (valid) {
-          axios
-            .post(`/api/user/login`, {
+        this.$refs.ruleForm.validate((valid) => {
+          if (valid) {
+            axios.post('/api/user/login',{
               username: this.ruleForm.username,
               password: this.ruleForm.password,
               code: this.ruleForm.code
             })
-            .then(res => {
-              if (res.data.code === 200) {
-                sessionStorage.setItem("user", JSON.stringify(res.data.data[0]));
-                this.$message.success("登录成功");
-                this.$router.push('/');
-              } else {
-                this.$message.error(res.data.message);
-                // username: "";
-                // password: "";
-              }
-               
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        } else {
-          this.$message.error("填写有误,请检查");
-          return false;
-        }
-      });
-    },
-    getCode(){
-      axios.get('/api/captcha').then(res => {
-        this.code = res.data
-      }).catch(err => {
-        console.log(err);
-      })
-    }
+            this.$message.success('登录成功')
+             this.$router.push('/')
+          } else {
+            this.$message.error('用户名或者密码错误')
+            return false;
+          }
+        });
+      },
+      register(){
+        this.$router.push("/Register")
+      }
      
     },
    mounted() {
-     this.getCode()
+
    },
    watch: {
 

@@ -1,21 +1,17 @@
 <template>
  <div class="continar">
     <div class="box">
-        <div><a href="/login">欢迎来到小爱系统</a></div>
-         <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <div>
-          <el-form-item label="请输入用户名" prop="username">
-          <el-input type="text" v-model="ruleForm.username" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="请输入密码" prop="password">
-          <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-          </el-form-item>
-        </div>
+     <div class="title">欢迎来到小爱后台管理系统</div>
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="请输入用户名" prop="username">
+        <el-input type="text" v-model="ruleForm.username" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="请输入密码" prop="passWord">
+        <el-input type="password" v-model="ruleForm.passWord" autocomplete="off"></el-input>
+        </el-form-item>
         <el-form-item>
-        <div style="display:flex">
-        <el-button type="primary" @click="regForm" class="reg">立即注册</el-button>
+        <el-button type="primary" @click="regForm('ruleForm')" class="reg">立即注册</el-button>
         <el-button type="primary" @click="submitForm('ruleForm')" class="submit">立即登录</el-button>
-        </div>
         </el-form-item>
 </el-form>
     </div>
@@ -34,7 +30,7 @@ import axios from 'axios'
    data() {
       return {
         ruleForm: {
-          password: '',
+          checkPass: '',
           username: ''
         },
         rules: {
@@ -74,17 +70,22 @@ import axios from 'axios'
       regForm() {
       axios
         .post("/api/user/register", {
-          username: this.ruleForm.username,
-          password: this.ruleForm.password
+          username: this.ruleForm.userName,
+          password: this.ruleForm.passWord
         })
         .then(res => {
           console.log(res.data);
           if (res.data.code === 200) {
-            this.$message.success('注册成功')
-             
+            this.$message({
+              message: res.data.message,
+              type: "success"
+            });
             this.$router.push("/login");
           } else {
-            this.$message.error(res.data.message)
+            this.$message({
+              message: res.data.message,
+              type: "error"
+            });
           }
         })
         .catch(err => {
@@ -106,10 +107,6 @@ import axios from 'axios'
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: black;
-}
 .continar {
     width:100%;
     height: 100%;
@@ -118,15 +115,14 @@ a {
     align-items: center;
 }
 .box {
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 500px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid #dddddd;
     background: white;
     box-shadow: 0 1px 2px 0 #ddd;
-    justify-content: center;
 }
 .title {
   height: 60px;
@@ -144,6 +140,4 @@ a {
 .reg {
   margin-right: 60px;
 }
-
-
 </style>

@@ -6,6 +6,10 @@ import layout from '../views/layout1/layout'
 Vue.use(VueRouter)
 
   const routes = [
+    {
+      path:'/home',
+      redirect:'/'
+    },
   {
     path:'/',
     name:'layout',
@@ -15,13 +19,11 @@ Vue.use(VueRouter)
         path: '',
         name: 'Home',
         component: Home,
-        meta:{
+        meta: {
           title:'首页'
         }
+
       },
-      {
-        path:'',
-      }
     ]
   },
   {
@@ -31,6 +33,7 @@ Vue.use(VueRouter)
     meta:{
       title:'登录页'
     }
+  },
   },
   {
     path: '/register',
@@ -47,16 +50,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-
-router.beforeEach((to, from,next) => {
-  document.title = to.meta.title
-  let user = sessionStorage.user
-  console.log(user);
-  if(to.path === '/login' || to.path === '/register') {
-    next()
-  }else {
-    user ? next() : next('/login')
-  }
-})
+  router.beforeEach((to, from,next) => {
+    document.title = to.meta.title
+    let user = localStorage.getItem('uesr')
+    if(to.path === '/login' || to.path === '/register') {
+      next()
+    }else {
+      user ? next() : next('/login')
+    }
+  })
 export default router

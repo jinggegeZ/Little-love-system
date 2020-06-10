@@ -19,9 +19,6 @@ Vue.use(VueRouter)
           title:'首页'
         }
       },
-      {
-        path:'',
-      }
     ]
   },
   {
@@ -47,12 +44,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-
 router.beforeEach((to, from,next) => {
   document.title = to.meta.title
-  let user = sessionStorage.user
-  console.log(user);
+  let user = localStorage.getItem('uesr')
   if(to.path === '/login' || to.path === '/register') {
     next()
   }else {
