@@ -2,9 +2,9 @@
  <div class="nei">
    <homePage></homePage>
    <div class="h-nav">
-   <div class="hnav1"><homePage1></homePage1></div>
-   <div class="hnav1"><homePage2></homePage2></div>
-   <div class="hnav1"><homepage3></homepage3></div>
+   <div><homePage1></homePage1></div>
+   <div><homePage2></homePage2></div>
+   <div><homepage3></homepage3></div>
    </div>
   <div class="hb1">
    <div class="order"><order></order></div>

@@ -6,6 +6,7 @@
             <div slot="header" class="clearfix">
             <span>您确定退出小爱后台系统吗</span>
             <el-button style="float: right; padding: 3px 0" type="text" @click="dialogVisible = true">离开</el-button>
+            
             <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
             <span>请您再次确认是否离开</span>
             <span slot="footer" class="dialog-footer">
@@ -37,18 +38,22 @@ export default {
     };
   },
   methods: {
-     handleClose() {
+      logout(){
+          localStorage.clear()
+        //   this.$router.push('/login')
+      },
+      methods: {
+      handleClose(done) {
         this.$confirm('确认关闭？')
           .then(_ => {
-            localStorage.clear()
-            this.$router.push('/login')
+            done();
           })
-          .catch(_ => {
-              console.log();
-          });
+          .catch(_ => {});
       }
+    }
   },
   mounted() {
+      this.logout()
   },
   watch: {},
   computed: {}

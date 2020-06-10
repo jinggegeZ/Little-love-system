@@ -99,8 +99,10 @@ body{
     justify-content: space-around;
 }
 .hn {
+    width: 400px;
     height: 360px;
     background: white;
+    
 }
 .el-table .warning-row {
     background: oldlace;

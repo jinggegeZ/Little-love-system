@@ -39,16 +39,17 @@ export default {
   methods: {
      handleClose() {
         this.$confirm('确认关闭？')
-          .then(_ => {
+          .then(res => {
             localStorage.clear()
             this.$router.push('/login')
           })
-          .catch(_ => {
-              console.log();
+          .catch(err => {
+              console.log(err);
           });
       }
   },
   mounted() {
+      this.logout()
   },
   watch: {},
   computed: {}

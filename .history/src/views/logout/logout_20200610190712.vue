@@ -44,7 +44,7 @@ export default {
             this.$router.push('/login')
           })
           .catch(_ => {
-              console.log();
+              console.log(err);
           });
       }
   },

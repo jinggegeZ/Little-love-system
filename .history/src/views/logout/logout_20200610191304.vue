@@ -41,7 +41,7 @@ export default {
         this.$confirm('确认关闭？')
           .then(_ => {
             localStorage.clear()
-            this.$router.push('/login')
+            this.$router.push('login')
           })
           .catch(_ => {
               console.log();

@@ -6,8 +6,7 @@ body{
     height: 100%;
 }
 .hnav1 {
-    width: 31%;
-    margin-top: 5px;
+    width: 30%;
 }
 .el-header {
     background-color: rgb(46,94,133);
@@ -99,8 +98,10 @@ body{
     justify-content: space-around;
 }
 .hn {
+    width: 400px;
     height: 360px;
     background: white;
+    
 }
 .el-table .warning-row {
     background: oldlace;
