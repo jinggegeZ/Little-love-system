@@ -37,16 +37,17 @@ export default {
     };
   },
   methods: {
-     handleClose(done) {
+     handleClose() {
         this.$confirm('确认关闭？')
           .then(_ => {
-          done()
+            consele.log('123')
+            localStorage.clear()
+            this.$router.push('/login')
           })
           .catch(_ => {
               console.log();
           });
-      },
-      
+      }
   },
   mounted() {
   },

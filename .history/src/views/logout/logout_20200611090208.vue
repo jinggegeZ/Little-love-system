@@ -40,7 +40,7 @@ export default {
      handleClose(done) {
         this.$confirm('确认关闭？')
           .then(_ => {
-          done()
+          done(this.$router.push('/login'))
           })
           .catch(_ => {
               console.log();

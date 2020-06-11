@@ -1,6 +1,12 @@
 <template>
  <div>
-
+    <div class="upbox">
+    <!-- 本身自带的上传组件 -->
+      <div class="upfont"></div>
+      <div></div>
+      
+      <div></div>
+    </div>
  </div>
 </template>
 

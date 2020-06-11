@@ -10,7 +10,7 @@
             <span>请您再次确认是否离开</span>
             <span slot="footer" class="dialog-footer">
             <el-button type="success" @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            <el-button type="primary" @click="leave">确 定</el-button>
             </span>
             </el-dialog>
             </div>
@@ -37,15 +37,9 @@ export default {
     };
   },
   methods: {
-     handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-          done()
-          })
-          .catch(_ => {
-              console.log();
-          });
-      },
+     leave(){
+       if(dialogVisible === true)
+     }
       
   },
   mounted() {
