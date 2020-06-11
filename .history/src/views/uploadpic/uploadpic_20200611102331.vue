@@ -20,8 +20,8 @@
       <div class="elui">VUE-img-crop-upload</div>
       <div>
         <div id="app">
-       <el-button class="btn" @click="toggleShow" type="primary">点击上传</el-button>
-       <my-upload 
+       <el-button class="btn" @click="toggleShow" type="primary">设置头像</el-button>
+       <my-upload  
        @crop-success="cropSuccess" 
        @crop-upload-success="cropUploadSuccess"
        @crop-upload-fail="cropUploadFail"
@@ -32,8 +32,8 @@
       :size="size"
       langType='zh'
       :noRotate='false'
-      field="file"
-      url="/api/upload"></my-upload>    
+      field="Avatar1"
+      url="/server/public/uploads"></my-upload>    
        <img :src="imgDataUrl">
        </div>
       </div>

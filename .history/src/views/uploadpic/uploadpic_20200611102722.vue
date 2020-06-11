@@ -33,7 +33,7 @@
       langType='zh'
       :noRotate='false'
       field="file"
-      url="/api/upload"></my-upload>    
+      url="/api/uploads"></my-upload>    
        <img :src="imgDataUrl">
        </div>
       </div>

@@ -20,22 +20,22 @@
       <div class="elui">VUE-img-crop-upload</div>
       <div>
         <div id="app">
-       <el-button class="btn" @click="toggleShow" type="primary">点击上传</el-button>
-       <my-upload 
-       @crop-success="cropSuccess" 
-       @crop-upload-success="cropUploadSuccess"
-       @crop-upload-fail="cropUploadFail"
-       v-model="show" 
-      :width="200" 
-      :height="200" 
-      img-format="png" 
-      :size="size"
-      langType='zh'
-      :noRotate='false'
-      field="file"
-      url="/api/upload"></my-upload>    
-       <img :src="imgDataUrl">
-       </div>
+ 3      <el-button class="btn" @click="toggleShow" type="primary">设置头像</el-button>
+ 4      <my-upload  
+ 5      @crop-success="cropSuccess" 
+ 6      @crop-upload-success="cropUploadSuccess"
+ 7      @crop-upload-fail="cropUploadFail"
+ 8      v-model="show" 
+ 9      :width="200" 
+10      :height="200" 
+11      img-format="png" 
+12      :size="size"
+13      langType='zh'
+14      :noRotate='false'
+15      field="Avatar1"
+16      url="https://httpbin.org/post"></my-upload>
+17     <img :src="imgDataUrl">
+18   </div>
       </div>
 </el-card>
  </div>
@@ -48,7 +48,7 @@ import myUpload from 'vue-image-crop-upload';
    props: {
    },
    components: {
-     "my-upload": myUpload
+
    },
    data () {
      return {
@@ -58,25 +58,7 @@ import myUpload from 'vue-image-crop-upload';
      }
    },
    methods: {
-     toggleShow() {
-            this.show = !this.show;
-        },
-        cropSuccess(imgDataUrl, field) {
-            console.log('-------- crop success --------',imgDataUrl, field);
-        },
-        //上传成功回调
-        cropUploadSuccess(jsonData, field){
-            console.log('-------- upload success --------');
-            this.imgDataUrl = jsonData.files.Avatar1;
-            console.log(jsonData);
-            console.log('field: ' + field);
-        },
-        //上传失败回调
-        cropUploadFail(status, field){
-            console.log('-------- upload fail --------');
-            console.log('上传失败状态'+ status);
-            console.log('field: ' + field);
-        }
+
    },
    mounted() {
 
