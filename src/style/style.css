@@ -5,6 +5,9 @@ html{
 body{
     height: 100%;
 }
+.el-progress-bar__outer {
+  background-color: #fff !important;
+}
 .hnav1 {
     width: 31%;
     margin-top: 5px;

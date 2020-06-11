@@ -26,8 +26,8 @@
        @crop-upload-success="cropUploadSuccess"
        @crop-upload-fail="cropUploadFail"
        v-model="show" 
-      :width="200" 
-      :height="200" 
+      :width="400" 
+      :height="300" 
       img-format="png" 
       :size="size"
       langType='zh'

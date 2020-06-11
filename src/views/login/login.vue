@@ -134,11 +134,13 @@ import axios from 'axios'
 
 <style scoped>
 .continar {
-    width:100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../../public/bg.jpg") no-repeat;
+  background-size: 100% 100%;
 }
 .box {
     width: 400px;
@@ -147,7 +149,7 @@ import axios from 'axios'
     justify-content: flex-start;
     align-items: center;
     border: 1px solid #dddddd;
-    background: white;
+    background: rgba(255,255,255,0.5);
     box-shadow: 0 1px 2px 0 #ddd;
 }
 </style>
