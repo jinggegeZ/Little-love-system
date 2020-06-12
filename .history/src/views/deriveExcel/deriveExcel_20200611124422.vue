@@ -5,9 +5,9 @@
             <div><input type="text" placeholder="请输入商品名" class="box-ipt"></div>
         </div>
         <div class="box-nav">
-            <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage*pageSize)" style="width: 100%"
+            <el-table :data="tableData" style="width: 100%"
             :default-sort="{prop:'data',order:'descending'}" >
-            <el-table-column label="商品名" width="270" prop="NAME">
+            <el-table-column label="姓名" width="270" prop="NAME">
             </el-table-column>
             <el-table-column label="商品编号" width="220" prop="GOODS_SERIAL_NUMBER">
             </el-table-column>
@@ -20,27 +20,12 @@
           <el-button size="mini" @click="deleteRow(scope.$index, tableData)">编辑</el-button>
           <el-button size="mini" type="danger" @click="handleDelete(item,index)">删除</el-button>
         </template>
-        </el-table-column>
-        </el-table>
-        <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-sizes="[20, 40, 60, 80]"
-        :page-size="pageSize"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="tableData.length">
-    </el-pagination>
+      </el-table-column>
+  </el-table>
         </div>
         <div class="box-foot">
-            <download-excel class="export-excel-wrapper" :data="tableData" name="goods.xls">
-                <el-button type="primary" size="small">导出xls</el-button>
-            </download-excel>
-      <div class="biaoge_b">
-            <download-excel class="export-excel-wrapper" :data="tableData" name="goods.xls" type="csv">
-                    <el-button type="danger" size="small">导出csv</el-button>
-            </download-excel>
-      </div>
+            <div><el-button type="primary">导出xls</el-button></div>
+            <div><el-button type="danger">导出csv</el-button></div>
         </div>
     </div>
  </div>
@@ -58,8 +43,6 @@ import axios from 'axios'
    data () {
      return {
          tableData: [],
-         currentPage:1,
-         pageSize:10,
      }
    },
    methods: {
@@ -76,13 +59,7 @@ import axios from 'axios'
           }).catch(err => {
               console.log(err);
           })
-      },
-      handleSizeChange(val) {
-        this.pageSize = val
-      },
-      handleCurrentChange(val) {
-         this.currentPage = val
-      },
+      }
    },
    mounted() {
        this.getData()
@@ -106,8 +83,6 @@ import axios from 'axios'
         width: 100px;
         height: 10%;
         margin-bottom: 15px;
-        margin-top: 15px;
-        
     }
     .box-nav {
         width: 100%;
@@ -124,8 +99,5 @@ import axios from 'axios'
     .box-ipt {
         height: 30px;
         width: 200px;
-    }
-    .biaoge_b {
-        margin-left: 15px;
     }
 </style>

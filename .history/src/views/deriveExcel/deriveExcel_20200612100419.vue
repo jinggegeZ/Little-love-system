@@ -106,8 +106,8 @@ import axios from 'axios'
         width: 100px;
         height: 10%;
         margin-bottom: 15px;
-        margin-top: 15px;
-        
+        margin-top: 5px;
+        margin-left: 5px;
     }
     .box-nav {
         width: 100%;

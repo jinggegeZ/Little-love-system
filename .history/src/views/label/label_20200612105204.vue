@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="pri">
-            <el-button type="danger" @click="all1">删除全部</el-button>
+            <el-button type="danger" @click="all">删除全部</el-button>
           </div>
         </div>
       </el-tab-pane>
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="pri">
-            <el-button type="info" @click="all2">清空回收站</el-button>
+            <el-button type="info" @click="all">清空回收站</el-button>
           </div>
         </div>
       </el-tab-pane>
@@ -114,10 +114,10 @@ export default {
     all(item,index){
       this.arr.splice(index)
     },
-    all1(item,index){
+    all(item,index){
       this.arr1.splice(index)
     },
-    all2(item,index){
+    all(item,index){
       this.arr2.splice(index)
     }
   },

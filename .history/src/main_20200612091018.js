@@ -13,7 +13,6 @@ Vue.config.productionTip = false
 Vue.use(VCharts)
 Vue.use(ElementUI);
 Vue.use(mavonEditor);
-Vue.component('downloadExcel', JsonExcel)
 
 new Vue({
   router,

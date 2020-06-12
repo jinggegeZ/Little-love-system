@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="pri">
-            <el-button type="primary" @click="all">全部标记为已读</el-button>
+            <el-button type="primary">全部标记为已读</el-button>
           </div>
         </div>
       </el-tab-pane>
@@ -26,14 +26,14 @@
               <div>{{item.title}}</div>
               <div class="eltp2">
                 <div>{{item.time}}</div>
-                <div class="eltp3">
-                  <el-button @click="del1">{{item.message}}</el-button>
+                <div class="eltp3" @click="del">
+                  <el-button>{{item.message}}</el-button>
                 </div>
               </div>
             </div>
           </div>
           <div class="pri">
-            <el-button type="danger" @click="all1">删除全部</el-button>
+            <el-button type="danger">删除全部</el-button>
           </div>
         </div>
       </el-tab-pane>
@@ -44,14 +44,14 @@
               <div>{{item.title}}</div>
               <div class="eltp2">
                 <div>{{item.time}}</div>
-                <div class="eltp3">
-                  <el-button type="warning" @click="del2">{{item.message}}</el-button>
+                <div class="eltp3" @click="del">
+                  <el-button type="warning">{{item.message}}</el-button>
                 </div>
               </div>
             </div>
           </div>
           <div class="pri">
-            <el-button type="info" @click="all2">清空回收站</el-button>
+            <el-button type="info">清空回收站</el-button>
           </div>
         </div>
       </el-tab-pane>
@@ -69,8 +69,8 @@ export default {
       activeName: "first",
       arr: [
         {
-          title: "[系统通知]，该系统将于今晚凌晨2点到5点进行系统维护升级",
-          time: "2018-04-19 20:00:00",
+          title: "今晚12点发大红包，先到先得1",
+          time: "2018-04-19 21:00:00",
           message: "标为已读"
         },
         {
@@ -78,7 +78,16 @@ export default {
           time: "2018-04-19 21:00:00",
           message: "标为已读"
         },
-        
+        {
+          title: "今晚12点发大红包，先到先得3",
+          time: "2018-04-19 21:00:00",
+          message: "标为已读"
+        },
+        {
+          title: "[系统通知]，该系统将于今晚凌晨2点到5点进行系统维护升级",
+          time: "2018-04-19 20:00:00",
+          message: "标为已读"
+        }
       ],
 
       arr1: [
@@ -104,21 +113,6 @@ export default {
     },
     del(item, index) {
       this.arr.splice(index, 1)
-    },
-    del1(item, index) {
-      this.arr1.splice(index, 1)
-    },
-    del2(item, index) {
-      this.arr2.splice(index, 1)
-    },
-    all(item,index){
-      this.arr.splice(index)
-    },
-    all1(item,index){
-      this.arr1.splice(index)
-    },
-    all2(item,index){
-      this.arr2.splice(index)
     }
   },
   mounted() {
