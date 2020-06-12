@@ -96,13 +96,6 @@ export default {
           message: "还原"
         }
       ],
-      arr3:[
-        {
-          title:'',
-          time:'',
-          message:'',
-        }
-      ]
     };
   },
   methods: {

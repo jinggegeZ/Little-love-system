@@ -2,7 +2,7 @@
  <div>
     <div class="box">
         <div class="box-head">
-            <div><input type="text" placeholder="请输入商品名" v-model="search" class="box-ipt"></div>
+            <div><input type="text" placeholder="请输入商品名" class="box-ipt" v-model="search"></div>
         </div>
         <div class="box-nav">
             <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage*pageSize)" style="width: 100%"
@@ -18,7 +18,7 @@
             <el-table-column label="操作">
         <template slot-scope="scope">
         <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
-          <el-button size="mini" type="danger" @click="handleDelete(scope.$index,scope.row)">删除</el-button>
+          <el-button size="mini" type="danger" @click="handleDelete(item,index,scope.row)">删除</el-button>
         </template>
         </el-table-column>
         </el-table>

@@ -32,6 +32,17 @@
               </div>
             </div>
           </div>
+          <div v-for="(item,index) in arr3" :key="index">
+            <div class="eltp1">
+              <div>{{item.title}}</div>
+              <div class="eltp2">
+                <div>{{item.time}}</div>
+                <div class="eltp3">
+                  <el-button @click="del1">{{item.message}}</el-button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="pri">
             <el-button type="danger" @click="all1">删除全部</el-button>
           </div>

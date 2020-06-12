@@ -33,15 +33,13 @@
         </div>
         <div class="nab2">
             <div class="nab2-1">
-                <ve-pie :data="chartData" style="height: 400px;width:400px"></ve-pie>
+                <ve-pie :data="chartData" ></ve-pie>
             </div>
             <div class="nab2-1">
-                <ve-ring :data="chartData1" style="height: 400px;width:400px" :settings="chartSettings"></ve-ring>
+                <ve-ring :data="chartData1" style="height: 400px"></ve-ring>
             </div>
         </div>
-        <div class="nab3">
-            <ve-waterfall :data="chartData2"></ve-waterfall>
-        </div>
+        <div class="nab3"></div>
     </div>
  </div>
 </template>
@@ -55,9 +53,6 @@
 
    },
    data () {
-       this.chartSettings = {
-        roseType: 'radius'
-      }
      return {
          chartData: {
           columns: ['类目', '数量'],
@@ -78,17 +73,6 @@
             { '日期': '1/4', '访问用户': 1723 },
             { '日期': '1/5', '访问用户': 3792 },
             { '日期': '1/6', '访问用户': 4593 }
-          ]
-        },
-        chartData2: {
-          columns: ['时间', '数量'],
-          rows: [
-            { '时间': '2020-06-12', '数量': 1 },
-            { '时间': '2020-06-11', '数量': 2 },
-            { '时间': '2020-06-10', '数量': 3 },
-            { '时间': '2020-06-12', '数量': 4 },
-            { '时间': '2020-06-11', '数量': 5 },
-            { '时间': '2020-06-09', '数量': 6 }
           ]
         }
      }

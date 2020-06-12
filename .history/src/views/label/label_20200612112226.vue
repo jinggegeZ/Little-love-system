@@ -74,7 +74,7 @@ export default {
           message: "标为已读"
         },
         {
-          title: "今晚12点发大红包，先到先得",
+          title: "今晚12点发大红包，先到先得2",
           time: "2018-04-19 21:00:00",
           message: "标为已读"
         },
@@ -91,16 +91,9 @@ export default {
 
       arr2: [
         {
-          title: "[系统通知]，您的优惠券已过期· ",
+          title: "[系统通知]，您的优惠券已过期",
           time: "2018-04-19 20:00:00",
           message: "还原"
-        }
-      ],
-      arr3:[
-        {
-          title:'',
-          time:'',
-          message:'',
         }
       ]
     };
@@ -111,7 +104,6 @@ export default {
     },
     del(item, index) {
       this.arr.splice(index, 1)
-      this.arr3 = this.arr.splice(index,1)
     },
     del1(item, index) {
       this.arr1.splice(index, 1)

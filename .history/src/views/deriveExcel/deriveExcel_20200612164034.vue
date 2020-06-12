@@ -2,7 +2,7 @@
  <div>
     <div class="box">
         <div class="box-head">
-            <div><input type="text" placeholder="请输入商品名" v-model="search" class="box-ipt"></div>
+            <div><el-input type="text" placeholder="请输入商品名" class="box-ipt" v-model="search"></div>
         </div>
         <div class="box-nav">
             <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage*pageSize)" style="width: 100%"

@@ -2,7 +2,7 @@
  <div>
     <div class="box">
         <div class="box-head">
-            <div><input type="text" placeholder="请输入商品名" v-model="search" class="box-ipt"></div>
+            <div><input type="text" placeholder="请输入商品名" class="box-ipt" v-model="search"></div>
         </div>
         <div class="box-nav">
             <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage*pageSize)" style="width: 100%"
@@ -17,8 +17,8 @@
             </el-table-column>
             <el-table-column label="操作">
         <template slot-scope="scope">
-        <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
-          <el-button size="mini" type="danger" @click="handleDelete(scope.$index,scope.row)">删除</el-button>
+        <el-button size="mini" @click="deleteRow(scope.$index, tableData)">编辑</el-button>
+          <el-button size="mini" type="danger" @click="handleDelete(item,index)">删除</el-button>
         </template>
         </el-table-column>
         </el-table>
@@ -78,19 +78,17 @@ import axios from 'axios'
          currentPage:1,
          pageSize:10,
          search:"",
-         dialogVisible: false,
+         dialgVisible: false,
          obj:{}
      }
    },
    methods: {
-        handleEdit(row) {
-        this.dialogVisible = true;
-        this.obj = row;
+        handleEdit(index, row) {
+        console.log(index, row);
       },
       handleDelete(index, row) {
-        this.tableData.splice(index, 1);
+        console.log(index, row);
       },
-      handleClose(dialogVisible) {},
       getData(){
           axios.get('/api/tableData').then(res => {
               this.tableData = res.data.data;

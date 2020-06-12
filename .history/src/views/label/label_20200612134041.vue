@@ -119,15 +119,15 @@ export default {
     del2(item, index) {
       this.arr2.splice(index, 1)
     },
-    all(item,index){
-      this.arr.splice(index)
-    },
-    all1(item,index){
-      this.arr1.splice(index)
-    },
-    all2(item,index){
-      this.arr2.splice(index)
-    }
+    // all(item,index){
+    //   this.arr.splice(index)
+    // },
+    // all1(item,index){
+    //   this.arr1.splice(index)
+    // },
+    // all2(item,index){
+    //   this.arr2.splice(index)
+    // }
   },
   mounted() {
   
