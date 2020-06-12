@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <el-tabs v-model="activeName">
-      <el-tab-pane label="one" name="first">
+      <el-tab-pane label="未读消息" name="first">
         <div class="eltp">
           <div v-if="arr.length > 0">
             <div v-for="(item,index) in arr" :key="index">
@@ -19,49 +19,43 @@
             <el-button type="primary" @click="all">全部标记为已读</el-button>
             </div>
           </div>
-        <div v-else class="eltp1">暂无数据了？</div>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="two" name="second">
+      <el-tab-pane label="已读消息" name="second">
         <div class="eltp">
-        <div v-if="arr1.length > 0">
-            <div v-for="(item,index) in arr1" :key="index">
-              <div class="eltp1">
-                <div>{{item.title}}</div>
-                <div class="eltp2">
-                  <div>{{item.time}}</div>
-                  <div class="eltp3">
-                    <el-button @click="del1">{{item.message}}</el-button>
-                  </div>
+        
+          <div v-for="(item,index) in arr1" :key="index">
+            <div class="eltp1">
+              <div>{{item.title}}</div>
+              <div class="eltp2">
+                <div>{{item.time}}</div>
+                <div class="eltp3">
+                  <el-button @click="del1">{{item.message}}</el-button>
                 </div>
               </div>
             </div>
-              <div class="pri">
-                <el-button type="danger" @click="all1">删除全部</el-button>
-              </div>
+        
+          <div class="pri">
+            <el-button type="danger" @click="all1">删除全部</el-button>
           </div>
-          <div v-else>暂无数据了！</div>
           </div>
       </el-tab-pane>
-      <el-tab-pane label="three" name="third">
+      <el-tab-pane label="回收站" name="third">
         <div class="eltp">
-          <div v-if="arr2.length > 0">
-            <div v-for="(item,index) in arr2" :key="index">
-              <div class="eltp1">
-                <div>{{item.title}}</div>
-                <div class="eltp2">
-                  <div>{{item.time}}</div>
-                  <div class="eltp3">
-                    <el-button type="warning" @click="del2">{{item.message}}</el-button>
-                  </div>
+          <div v-for="(item,index) in arr2" :key="index">
+            <div class="eltp1">
+              <div>{{item.title}}</div>
+              <div class="eltp2">
+                <div>{{item.time}}</div>
+                <div class="eltp3">
+                  <el-button type="warning" @click="del2">{{item.message}}</el-button>
                 </div>
               </div>
             </div>
-            <div class="pri">
-              <el-button type="info" @click="all2">清空回收站</el-button>
-            </div>
           </div>
-          <div v-else class="eltp1">暂无数据了？</div>
+          <div class="pri">
+            <el-button type="info" @click="all2">清空回收站</el-button>
+          </div>
         </div>
       </el-tab-pane>
     </el-tabs>
@@ -119,45 +113,30 @@ export default {
       console.log(tab, event);
     },
     del(item, index) {
-      this.arr.splice(index, 1);
-      this.arr1.push(item);
+      this.arr.splice(index, 1)
+      this.arr3 = this.arr.splice(index,1)
     },
     del1(item, index) {
-      this.arr1.splice(index, 1);
-      this.arr2.push(item);
+      this.arr1.splice(index, 1)
     },
     del2(item, index) {
-      this.arr2.splice(index, 1);
-      this.arr.push(item)
+      this.arr2.splice(index, 1)
     },
     all(item,index){
-      this.arr = this.arr.concat(this.ass)
-      this.ass = [];
+      this.arr.splice(index)
     },
     all1(item,index){
-      this.arr1 = this.arr1.concat(this.arr1);
-      this.arr1 = [];
+      this.arr1.splice(index)
     },
     all2(item,index){
-      this.arr2 = this.arr1.concat(this.arr2);
-      this.arr1 = [];
+      this.arr2.splice(index)
     }
   },
   mounted() {
   
   },
   watch: {},
-  computed: {
-    one() {
-      return "未读消息" + "(" + this.arr.length + ")";
-    },
-    two() {
-      return "已读消息" + "(" + this.arr1.length + ")";
-    },
-    three() {
-      return "回收箱" + "(" + this.arr2.length + ")";
-    }
-  }
+  computed: {}
 };
 </script>
 

@@ -24,7 +24,6 @@
       </el-tab-pane>
       <el-tab-pane label="two" name="second">
         <div class="eltp">
-        <div v-if="arr1.length > 0">
             <div v-for="(item,index) in arr1" :key="index">
               <div class="eltp1">
                 <div>{{item.title}}</div>
@@ -35,12 +34,10 @@
                   </div>
                 </div>
               </div>
-            </div>
               <div class="pri">
                 <el-button type="danger" @click="all1">删除全部</el-button>
               </div>
-          </div>
-          <div v-else>暂无数据了！</div>
+            </div>
           </div>
       </el-tab-pane>
       <el-tab-pane label="three" name="third">
